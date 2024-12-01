@@ -1,0 +1,37 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { EnemiesComponent } from './enemies/enemies.component';
+import { MateriaComponent } from './materia/materia.component';
+import { ProfessionsComponent } from './professions/professions.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { WeaponsComponent } from './weapons/weapons.component';
+import { PeopleFormComponent } from './people-form/people-form.component';
+import { MateriaFormComponent } from './materia-form/materia-form.component';
+import { WeaponsFormComponent } from './weapons-form/weapons-form.component';
+import { ProfessionsFormComponent } from './professions-form/professions-form.component';
+import { PeopleComponent } from './people/people.component';
+import { VehiclesFormComponent } from './vehicles-form/vehicles-form.component';
+import { EnemiesFormComponent } from './enemies-form/enemies-form.component';
+import { DocsComponent } from './docs/docs.component';
+export const routes: Routes = [
+  { path: '', component: HomeComponent }, // Página de inicio
+  { path: 'materia', component: MateriaComponent },
+  { path: 'materia/new', component: MateriaFormComponent },
+  { path: 'materia/edit/:id', component: MateriaFormComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'people/new', component: PeopleFormComponent },
+  { path: 'people/edit/:id', component: PeopleFormComponent },
+  { path: 'weapon', component: WeaponsComponent },
+  { path: 'docs', component: DocsComponent },
+  { path: 'weapon/new', component: WeaponsFormComponent },
+  { path: 'weapon/edit/:id', component: WeaponsFormComponent },
+  { path: 'profession', component: ProfessionsComponent },
+  { path: 'profession/new', component: ProfessionsFormComponent },
+  { path: 'profession/edit/:id', component: ProfessionsFormComponent },
+  { path: 'vehicle', component: VehiclesComponent },
+  { path: 'vehicle/new', component: VehiclesFormComponent },
+  { path: 'vehicle/edit/:id', component: VehiclesFormComponent },
+  { path: 'enemies', component: EnemiesComponent },
+  { path: 'enemies/new', component: EnemiesFormComponent },
+  { path: 'enemies/edit/:id', component: EnemiesFormComponent },
+];

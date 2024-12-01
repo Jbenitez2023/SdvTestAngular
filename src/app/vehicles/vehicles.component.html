@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col"><h2>Vehicles</h2></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a routerLink="/vehicle/new" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary">Create</a>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Type</th>
+          <th scope="col">Color</th>
+          <th scope="col">Max velocity</th>
+          <th scope="col">Capacity</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr routerLink="/vehicle/edit/{{ vehicle.id }}" routerLinkActive="active" ariaCurrentWhenActive="page" *ngFor="let vehicle of response?.result">
+              <td>{{ vehicle.id }}</td>
+              <td>{{ vehicle.name }}</td>
+              <td>{{ vehicle.vehicleType }}</td>
+              <td>{{ vehicle.color }}</td>
+              <td>{{ vehicle.maxVelocity }}</td>
+              <td>{{ vehicle.capacity }}</td>
+              <td>
+                <button (click)="delete($event,vehicle.id)" class="btn btn-danger" style="float:right;">Delete</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+      </div>
+    </div>

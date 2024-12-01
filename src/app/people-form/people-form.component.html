@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+      <div class="col"> <h2>{{ personId ? 'Edit' : 'Add' }} character</h2></div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+   
+      <div class="container">
+       
+        <div class="row row-cols-auto">
+            <form [formGroup]="peopleForm" (ngSubmit)="save()">
+                <div class="row row-cols-auto">
+            <input type="hidden" id="id"  formControlName="id" #id class="form-control">
+          <div class="col">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name">
+          </div>
+          <div class="col">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" id="age" formControlName="age" class="form-control" placeholder="Age">
+          </div>
+          <div class="col">
+            <label for="lvl" class="form-label">Lvl</label>
+            <input type="number" id="lvl" formControlName="lvl" class="form-control" placeholder="Lvl">
+          </div>
+          <div class="col">
+            <label for="idWeaponEquiped" class="form-label">Weapon</label>
+            <select id="idWeaponEquiped" formControlName="idWeaponEquiped"  class="form-select">
+              <option *ngFor="let option of weapon?.result" [value]="option.id">
+              {{ option.name }}</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="idProfession" class="form-label">Profession</label>
+            <select id="idProfession" formControlName="idProfession" class="form-select">
+            <option >select</option>
+              <option *ngFor="let option of profession?.result" [value]="option.id">
+              {{ option.name }}</option>
+            </select>
+          </div>
+        </div>
+        </form>
+        <form [formGroup]="peopleMateriaForm">
+          <div class="col" *ngIf="personId">
+            <div class="">
+                <label for="basic-url" class="form-label"></label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon3">Select a materia to equip</span>
+                    <select class="nav-item form-select form-select-sm" formControlName="idMateria" aria-label="Small select example"  >
+                    <option *ngFor="let option of materia?.result" [value]="option.id">
+                        {{ option.name}}</option>
+                    </select>
+                    <button class="btn btn-outline-success" (click)="addMateria()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                    </svg>
+                    </button>
+                </div>
+            </div>
+          </div>
+        </form>
+        </div> 
+        <br/>
+  
+        <div class="row row-cols-auto  mx-auto p-2" *ngIf="personId">
+           
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                    <th> Materia equiped</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let data of person?.people_materia">
+                        <td> {{data.nameMateria}}</td>
+                        <td> <button  class="btn btn-danger" (click)="removeMateria(data.id)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-escape" viewBox="0 0 16 16">
+                                <path d="M8.538 1.02a.5.5 0 1 0-.076.998 6 6 0 1 1-6.445 6.444.5.5 0 0 0-.997.076A7 7 0 1 0 8.538 1.02"/>
+                                <path d="M7.096 7.828a.5.5 0 0 0 .707-.707L2.707 2.025h2.768a.5.5 0 1 0 0-1H1.5a.5.5 0 0 0-.5.5V5.5a.5.5 0 0 0 1 0V2.732z"/>
+                              </svg>
+                        </button>
+                    </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="col"></div>
+         
+        <br/>
+        <div class="row row-cols-auto">
+          <div class="col">
+              <button type="submit"  class="btn btn-primary" >Save</button>
+          </div>
+        </div>
+      </div>
+   
+      </div>
+    </div>

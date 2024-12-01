@@ -1,0 +1,41 @@
+body {
+    background-image: url('assets/img/wp.png'); /* Ruta relativa a la carpeta `assets` */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    height: 100vh; /* Asegura que ocupe toda la ventana */
+    margin: 0; /* Quita el margen del body */
+    color: white !important;
+  }
+
+  .behemot {
+    background-image: url('assets/img/behemot.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* O el tamaño que desees */
+    width: 350px;
+  }
+
+  .materia {
+    background-image: url('assets/img/Materia.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* O el tamaño que desees */
+    width: 350px;
+  }
+
+  .chocobo {
+    background-image: url('assets/img/Chocobo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* O el tamaño que desees */
+    width: 350px;
+  }
+
+  .weapon {
+    background-image: url('assets/img/sword.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* O el tamaño que desees */
+    width: 350px;
+  }

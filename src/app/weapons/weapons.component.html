@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col"><h2>Weapons</h2></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a routerLink="/weapon/new" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary">Create</a>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Profession</th>
+          <th scope="col">Str Boost</th>
+          <th scope="col">Mg Boost</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr routerLink="/weapon/edit/{{ weapon.id }}" routerLinkActive="active" ariaCurrentWhenActive="page" *ngFor="let weapon of response?.result">
+              <td>{{ weapon.id }}</td>
+              <td>{{ weapon.name }}</td>
+              <td>{{ weapon.professions.name }}</td>
+              <td>{{ weapon.strBoost }}</td>
+              <td>{{ weapon.mgBoost }}</td>
+              <td>
+                <button (click)="delete($event,weapon.id)" class="btn btn-danger" style="float:Right;">Delete</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+      </div>
+    </div>
+   

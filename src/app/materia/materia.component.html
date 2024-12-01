@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col"><h2>Materia</h2></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a routerLink="/materia/new" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary">Create</a>
+      </div>
+    </div>
+    <br/>
+
+    <div class="row">
+      <div class="col">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Lvl</th>
+          <th scope="col">Color</th>
+          <th scope="col">Element</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr routerLink="/materia/edit/{{ materia.id }}" routerLinkActive="active" ariaCurrentWhenActive="page" *ngFor="let materia of materia?.result">
+              <td>{{ materia.id }}</td>
+              <td>{{ materia.name }}</td>
+              <td>{{ materia.description }}</td>
+              <td>{{ materia.lvl }}</td>
+              <td>{{ materia.color }}</td>
+              <td>{{ materia.element }}</td>
+              <td>
+                <button (click)="delete($event,materia.id)" class="btn btn-danger" style="float: right;">Delete</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+      </div>
+    </div>

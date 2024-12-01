@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+      <div class="col"><h2>Professions</h2></div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <a routerLink="/profession/new" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary">Create</a>
+          <br/>
+          <br/>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Str Boost</th>
+                  <th scope="col">Def Boost</th>
+                  <th scope="col">Hp Boost</th>
+                  <th scope="col">Spd Boost</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr routerLink="/profession/edit/{{ profession.id }}" routerLinkActive="active" ariaCurrentWhenActive="page" *ngFor="let profession of response?.result">
+                      <td>{{ profession.id }}</td>
+                      <td>{{ profession.name }}</td>
+                      <td>{{ profession.strBoost }}</td>
+                      <td>{{ profession.defBoost }}</td>
+                      <td>{{ profession.hpBoost }}</td>
+                      <td>{{ profession.speedBoost }}</td>
+                      <td>
+                        <button (click)="delete($event,profession.id)" class="btn btn-danger" style="float:right;">Delete</button>
+                      </td>
+                    </tr>
+              </tbody>
+            </table>  
+      </div>
+    </div>

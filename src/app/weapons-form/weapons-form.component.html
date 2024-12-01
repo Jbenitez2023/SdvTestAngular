@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col"><h2>{{ Id ? 'Edit weapon' : 'Add weapon' }}</h2></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="XForm" (ngSubmit)="save()">
+            <div class="container">
+                <div class="row row-cols-auto">
+                <input type="hidden" id="id" formControlName="id" class="form-control">
+                    <div class="col">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col">
+                        <label for="idProfession" class="form-label">Profession</label>
+                        <select id="idProfession" formControlName="idProfession" class="form-select">
+                        <option value="0" >select</option>
+                            <option *ngFor="let option of profession?.result" [value]="option.id">
+                            {{ option.name }}</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="strBoost" class="form-label">Str Boost</label>
+                        <input type="number" id="strBoost" formControlName="strBoost" class="form-control" placeholder="strBoost">
+                    </div>
+                    <div class="col">
+                        <label for="mgBoost" class="form-label">Mg Boost</label>
+                        <input type="number" id="mgBoost" formControlName="mgBoost" class="form-control" placeholder="mgBoost">
+                    </div>
+                    </div>
+                    <br/>
+                    <div class="row row-cols-auto">
+                    <div class="col">
+                    <button type="submit"  class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

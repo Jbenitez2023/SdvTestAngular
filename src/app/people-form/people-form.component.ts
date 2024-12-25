@@ -15,7 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
   selector: 'app-people-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule,FormsModule],
- templateUrl:'./people-form.Component.html',
+ templateUrl:'./people-form.component.html',
 })
 export class PeopleFormComponent {
 
@@ -118,6 +118,7 @@ export class PeopleFormComponent {
     } else {
    
       const formData = this.peopleForm.value;
+      console.log(formData)
       this.peopleService.create(formData).subscribe(() => {
         this.router.navigate(['/people']);
       });

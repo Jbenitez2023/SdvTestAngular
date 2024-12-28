@@ -7,7 +7,7 @@ import { ApiResponse } from '../Models/api-response.model';
   providedIn: 'root',
 })
 export class ProfessionService {
-  private baseUrl = 'http://sdvb.azurewebsites.net/api/ProfessionAPI';
+  private baseUrl = 'https://sdvb.azurewebsites.net/api/ProfessionAPI';
 
   constructor(private http: HttpClient) {}
 

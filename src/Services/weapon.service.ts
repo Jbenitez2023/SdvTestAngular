@@ -7,7 +7,7 @@ import { ApiResponse } from '../Models/api-response.model';
   providedIn: 'root',
 })
 export class WeaponService {
-  private baseUrl = 'http://sdvb.azurewebsites.net/api/WeaponsAPI';
+  private baseUrl = 'https://sdvb.azurewebsites.net/api/WeaponsAPI';
 
   constructor(private http: HttpClient) {}
 

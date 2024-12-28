@@ -44,7 +44,7 @@ import { GenericConsultService } from '../../Services/GenericConsult.service';
           <div class="">
             <label for="basic-url" class="form-label">Select an API and ID</label>
             <div class="input-group">
-              <span class="input-group-text" id="basic-addon3">http://sdvb.azurewebsites.net/api/</span>
+              <span class="input-group-text" id="basic-addon3">https://sdvb.azurewebsites.net/api/</span>
               <select class="nav-item form-select form-select-sm" formControlName="api" aria-label="Small select example" >
                 <option value="EnemiesAPI">EnemiesAPI/</option>
                 <option value="MateriaAPI">MateriaAPI/</option>
@@ -163,7 +163,7 @@ export class HomeComponent {
     getValue(): void {
       let api = this.formGroup.get('api')?.value; // Obtiene el valor
       let id = this.formGroup.get('id')?.value; // Obtiene el valor
-      this.link = "http://sdvb.azurewebsites.net/api/"+ api;
+      this.link = "https://sdvb.azurewebsites.net/api/"+ api;
       this.genericConsultService.baseUrl = this.link
 
       this.genericConsultService.getById(id).subscribe((response) => {

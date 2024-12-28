@@ -44,7 +44,7 @@ import { GenericConsultService } from '../../Services/GenericConsult.service';
           <div class="">
             <label for="basic-url" class="form-label">Select an API and ID</label>
             <div class="input-group">
-              <span class="input-group-text" id="basic-addon3">https://sdvb.azurewebsites.net/api/</span>
+              <span class="input-group-text" id="basic-addon3">http://sdvb.azurewebsites.net/api/</span>
               <select class="nav-item form-select form-select-sm" formControlName="api" aria-label="Small select example" >
                 <option value="EnemiesAPI">EnemiesAPI/</option>
                 <option value="MateriaAPI">MateriaAPI/</option>

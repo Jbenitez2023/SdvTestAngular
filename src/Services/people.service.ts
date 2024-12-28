@@ -8,7 +8,7 @@ import { Person } from '../Models/Person.model';
   providedIn: 'root',
 })
 export class PeopleService {
-  private baseUrl = 'https://sdvb.azurewebsites.net/api/PeopleAPI';
+  private baseUrl = 'http://sdvb.azurewebsites.net/api/PeopleAPI';
 
   constructor(private http: HttpClient) {}
 

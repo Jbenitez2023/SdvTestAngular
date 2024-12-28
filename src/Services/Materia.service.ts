@@ -8,7 +8,7 @@ import { Materia } from '../Models/Materia.models';
   providedIn: 'root',
 })
 export class MateriaService {
-  private baseUrl = 'http://localhost:8000/api/MateriaAPI';
+  private baseUrl = 'http://sdvb.azurewebsites.net/api/MateriaAPI';
 
   constructor(private http: HttpClient) {}
 

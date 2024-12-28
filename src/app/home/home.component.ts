@@ -164,7 +164,7 @@ export class HomeComponent {
     getValue(): void {
       let api = this.formGroup.get('api')?.value; // Obtiene el valor
       let id = this.formGroup.get('id')?.value; // Obtiene el valor
-      this.link = "http://localhost:8000/api/"+ api;
+      this.link = "http://sdvb.azurewebsites.net/api/"+ api;
       this.genericConsultService.baseUrl = this.link
 
       this.genericConsultService.getById(id).subscribe((response) => {

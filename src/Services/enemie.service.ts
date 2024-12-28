@@ -8,7 +8,7 @@ import { Person } from '../Models/Person.model';
   providedIn: 'root',
 })
 export class EnemiesService {
-  private baseUrl = 'http://localhost:8000/api/EnemiesAPI';
+  private baseUrl = 'http://sdvb.azurewebsites.net/api/EnemiesAPI';
 
   constructor(private http: HttpClient) {}
 

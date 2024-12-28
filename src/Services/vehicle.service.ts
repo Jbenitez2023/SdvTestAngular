@@ -7,7 +7,7 @@ import { ApiResponse } from '../Models/api-response.model';
   providedIn: 'root',
 })
 export class VehicleService {
-  private baseUrl = 'http://localhost:8000/api/VehiclesAPI';
+  private baseUrl = 'http://sdvb.azurewebsites.net/api/VehiclesAPI';
 
   constructor(private http: HttpClient) {}
 

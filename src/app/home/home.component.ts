@@ -158,7 +158,6 @@ export class HomeComponent {
         api: ['PeopleAPI'], // Valor inicial
         id : ['']
       });
-
     }
 
     getValue(): void {
